@@ -4,18 +4,18 @@ FROM python:3.10
 RUN adduser --disabled-password --gecos '' api-user
 
 # Definir directorio de trabajo 
-WORKDIR /opt/prediccionSalarios-api
+WORKDIR /opt/salarios-api-abc
 
-ENV PYTHONPATH=/opt/prediccionSalarios-api
+ENV PYTHONPATH=/opt/salarios-api-abc
 
 # Instalar dependencias
-ADD ./prediccionSalarios-api /opt/prediccionSalarios-api/
+ADD ./salarios-api-abc /opt/salarios-api-abc/
 
 RUN pip install --upgrade pip
-RUN pip install -r /opt/prediccionSalarios-api/requirements.txt
+RUN pip install -r /opt/salarios-api-abc/requirements.txt
 
 # Hacer el directorio de trabajo ejecutable 
-RUN chmod +x /opt/prediccionSalarios-api/run.sh
+RUN chmod +x /opt/salarios-api-abc/run.sh
 # Cambiar propiedad de la carpeta a api-user 
 RUN chown -R api-user:api-user ./
 
